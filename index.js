@@ -8,15 +8,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  const { name, email } = req.body;
-  res.json({ msg: "success boss", body: { name: name, email: email } });
+  res.json({ msg: "success boss" });
 });
 
 app.post("/ulala", (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
 
-  let msg = "ulala";
-  res.json(msg);
+  const { name, email } = req.body;
+  res.json({ msg: "success boss", body: { name: name, email: email } });
 });
 app.listen(process.env.PORT || 8000, () => {
   console.log("listening on port 8000");
