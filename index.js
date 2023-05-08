@@ -15,7 +15,7 @@ app.post("/ulala", (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
 
   const { hum, temp } = req.body;
-  res.json({ msg: "success boss", body: { hum: hum, temp: temp } });
+  res.json({ msg: "success, data received", body: { hum: hum, temp: temp } });
 });
 app.listen(process.env.PORT || 8000, () => {
   console.log("listening on port 8000");
