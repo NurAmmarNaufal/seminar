@@ -23,7 +23,7 @@ app.post("/ulala", (req, res) => {
     );
   }
 
-  let mappedValue = mapRange(temp, 20, 35, 0, 100);
+  let mappedValue = String(mapRange(temp, 20, 35, 0, 100), 2);
 
   res.json({ status: "OK", respond: { data: mappedValue, msg: `i received temp value ${temp}` } });
 });
