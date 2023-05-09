@@ -8,14 +8,24 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.json({ msg: "success boss", v: 3 });
+  res.json({ msg: "HI there 👋", v: 3 });
 });
 
 app.post("/ulala", (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
 
   const { hum, temp } = req.body;
-  res.json({ msg: "success, data received", body: { hum: hum, temp: temp } });
+
+  function mapRange(value, inputMin, inputMax, outputMin, outputMax) {
+    return (
+      ((value - inputMin) * (outputMax - outputMin)) / (inputMax - inputMin) +
+      outputMin
+    );
+  }
+
+  let mappedValue = mapRange(temp, 20, 35, 0, 100);
+
+  res.json({ status: "OK", respond: { data: mappedValue, msg: `i received temp value ${temp}` } });
 });
 app.listen(process.env.PORT || 8000, () => {
   console.log("listening on port 8000");
