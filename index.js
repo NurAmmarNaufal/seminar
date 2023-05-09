@@ -25,7 +25,7 @@ app.post("/ulala", (req, res) => {
 
   let mappedValue = mapRange(temp, 20, 35, 0, 100);
 
-  res.json({ status: "OK", respond: { data: String(mappedValue, 2), msg: `i received temp value ${temp}` } });
+  res.json({ status: "OK", respond: { data: Math.ceil(mappedValue), msg: `i received temp value ${temp}` } });
 });
 app.listen(process.env.PORT || 8000, () => {
   console.log("listening on port 8000");
