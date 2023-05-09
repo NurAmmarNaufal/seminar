@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.json({ msg: "HI there 👋", v: 3 });
+  res.json({ msg: "HI there 👋", v: 4 });
 });
 
 app.post("/ulala", (req, res) => {
