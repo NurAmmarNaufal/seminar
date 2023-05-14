@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
   res.json({ msg: "HI there 👋", v: 5 });
 });
 
-app.post("/ulala", (req, res) => {
+app.post("/http-req", (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
 
   const { hum, temp } = req.body;
