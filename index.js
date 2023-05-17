@@ -8,13 +8,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.json({ msg: "HI there 👋", v: 5 });
+  res.json({ msg: "HI there 👋", v: 6 });
 });
 
 app.post("/httpreq", (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
 
-  const { hum, temp } = req.body;
+  const { temp, tanah } = req.body;
 
   function mapRange(value, inputMin, inputMax, outputMin, outputMax) {
     return (
@@ -23,7 +23,7 @@ app.post("/httpreq", (req, res) => {
     );
   }
 
-  let mappedValue = mapRange(temp, 20, 35, 0, 100);
+  let mappedValue = mapRange(temp, 20, 35, 0, 255);
 
   res.json({
     status: "OK",
@@ -33,6 +33,7 @@ app.post("/httpreq", (req, res) => {
     },
   });
 });
+
 app.listen(process.env.PORT || 8000, () => {
   console.log("listening on port 8000");
 });
