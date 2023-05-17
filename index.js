@@ -29,7 +29,6 @@ app.post("/httpreq", (req, res) => {
     status: "OK",
     respond: {
       data: Math.ceil(mappedValue),
-      msg: `i received temp ${temp} & hum ${hum}`,
     },
   });
 });
