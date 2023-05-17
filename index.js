@@ -23,7 +23,7 @@ app.post("/httpreq", (req, res) => {
     );
   }
 
-  let mappedValue = mapRange(temp, 20, 35, 0, 255);
+  let mappedValue = mapRange(temp, 20, 35, 100, 255);
 
   res.json({
     status: "OK",
