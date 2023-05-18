@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.json({ msg: "HI there 👋", v: 6 });
+  res.json({ msg: "HI there 👋", v: 1.1 });
 });
 
 app.post("/httpreq", (req, res) => {
@@ -24,11 +24,13 @@ app.post("/httpreq", (req, res) => {
   }
 
   let mappedValue = mapRange(temp, 20, 35, 100, 255);
+  let kelembapanTanah = mapRange(tanah, 0, 100, 20, 0);
 
   res.json({
     status: "OK",
     respond: {
-      data: Math.ceil(mappedValue),
+      kipas: mappedValue,
+      pompa: kelembapanTanah
     },
   });
 });
