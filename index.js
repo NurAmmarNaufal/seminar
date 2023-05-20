@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.json({ msg: "HI there 👋", v: 1.1 });
+  res.json({ msg: "HI there 👋", v: 1.2 });
 });
 
 app.post("/httpreq", (req, res) => {
@@ -30,7 +30,8 @@ app.post("/httpreq", (req, res) => {
     status: "OK",
     respond: {
       kipas: Math.ceil(mappedValue),
-      pompa: Math.ceil(kelembapanTanah)
+      pompa: Math.ceil(kelembapanTanah),
+      ket: "kipas (PWM), pompa (detik)"
     },
   });
 });
