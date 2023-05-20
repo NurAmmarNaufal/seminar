@@ -23,6 +23,16 @@ app.post("/httpreq", (req, res) => {
     );
   }
 
+  if (temp < 20) {
+    temp = 20;
+  }
+  if (temp > 35) {
+    temp = 35;
+  }
+  if (tanah > 100) {
+    tanah = 100;
+  }
+
   let kipas = mapRange(temp, 20, 35, 100, 255);
   let kipasListrik = mapRange(temp, 20, 35, 0, 3);
   let kelembapanTanah = mapRange(tanah, 0, 100, 20, 0);
