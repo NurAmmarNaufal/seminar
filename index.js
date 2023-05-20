@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 app.post("/httpreq", (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
 
-  const { temp, tanah } = req.body;
+  let { temp, tanah } = req.body;
 
   function mapRange(value, inputMin, inputMax, outputMin, outputMax) {
     return (
