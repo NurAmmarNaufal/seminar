@@ -23,15 +23,19 @@ app.post("/httpreq", (req, res) => {
     );
   }
 
-  let mappedValue = mapRange(temp, 20, 35, 100, 255);
+  let kipas = mapRange(temp, 20, 35, 100, 255);
+  let kipasListrik = mapRange(temp, 20, 35, 0, 3);
   let kelembapanTanah = mapRange(tanah, 0, 100, 20, 0);
 
   res.json({
     status: "OK",
     respond: {
-      kipas: Math.ceil(mappedValue),
-      pompa: Math.ceil(kelembapanTanah),
-      ket: "kipas (PWM), pompa (detik)"
+      kipas: { value: Math.ceil(kipas), satuan: "PWM" },
+      kipasListrik: {
+        value: Math.ceil(kipasListrik),
+        satuan: "level kecepatan",
+      },
+      pompa: { value: Math.ceil(kelembapanTanah), satuan: "detik" },
     },
   });
 });
