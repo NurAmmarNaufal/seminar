@@ -39,7 +39,7 @@ app.post("/httpreq", (req, res) => {
 
   res.json({
     status: "OK",
-    respond: {
+    data: {
       kipas: { value: Math.ceil(kipas), satuan: "PWM" },
       kipasListrik: {
         value: Math.ceil(kipasListrik),
