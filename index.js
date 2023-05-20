@@ -29,8 +29,8 @@ app.post("/httpreq", (req, res) => {
   res.json({
     status: "OK",
     respond: {
-      kipas: mappedValue,
-      pompa: kelembapanTanah
+      kipas: Math.ceil(mappedValue),
+      pompa: Math.ceil(kelembapanTanah)
     },
   });
 });
