@@ -33,8 +33,8 @@ app.post("/httpreq", (req, res) => {
     tanah = 100;
   }
 
-  let kipas = mapRange(temp, 20, 35, 0, 255);
-  let kipasListrik = mapRange(temp, 20, 35, 0, 3);
+  let kipas = mapRange(temp, 20, 40, 0, 255);
+  let kipasListrik = mapRange(temp, 20, 40, 0, 3);
   let kelembapanTanah = mapRange(tanah, 0, 100, 20, 0);
 
   res.json({
