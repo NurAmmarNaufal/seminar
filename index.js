@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const { connect } = require("./config/mongoConnection");
 
 app.use(cors());
 
