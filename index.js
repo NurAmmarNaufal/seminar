@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const { connect } = require("./config/mongoConnection");
 
 app.use(cors());
 
@@ -49,6 +50,10 @@ app.post("/httpreq", (req, res) => {
     },
   });
 });
+
+app.post("/mongo/create", require("./config/mongoConnection").mongo);
+app.post("/mongo/find", require("./config/mongoConnection").find);
+app.get("/mongo/hapus", require("./config/mongoConnection").hapus);
 
 app.listen(process.env.PORT || 8000, () => {
   console.log("listening on port 8000");
